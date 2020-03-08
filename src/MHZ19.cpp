@@ -86,8 +86,8 @@ void MHZ19::writeCommand(uint8_t cmd[])
 
 void MHZ19::writeCommand(uint8_t cmd[], uint8_t *response)
 {
-	SoftwareSerial mhz19_serial(_rx_pin, _tx_pin);
-	mhz19_serial.begin(9600);
+	HardwareSerial mhz19_serial(1);
+	mhz19_serial.begin(9600, SERIAL_8N1, _rx_pin, _tx_pin);
 	mhz19_serial.write(cmd, REQUEST_CNT);
 	mhz19_serial.write(mhz19_checksum(cmd));
 	mhz19_serial.flush();

@@ -9,7 +9,7 @@
 #define _MHZ19
 
 #include "Arduino.h"
-#include "SoftwareSerial.h"
+#include "HardwareSerial.h"
 
 enum MHZ19_UART_DATA
 {
